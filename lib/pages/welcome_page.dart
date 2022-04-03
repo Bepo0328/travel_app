@@ -15,6 +15,9 @@ class _WelcomePageState extends State<WelcomePage> {
     'welcome-two.png',
     'welcome-three.png',
   ];
+
+  List texts = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,6 +55,8 @@ class _WelcomePageState extends State<WelcomePage> {
                           size: 14,
                         ),
                       ),
+                      SizedBox(height: 40),
+                      ResponsiveButton(width: 120),
                     ],
                   ),
                 ],

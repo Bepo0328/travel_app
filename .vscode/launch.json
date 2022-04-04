@@ -19,7 +19,7 @@
             "name": "Android - 7.6 Fold in with outer display API 30",
             "request": "launch",
             "type": "dart",
-            "deviceId": "emulator-5558",
+            "deviceId": "emulator-5556",
         },
         {
             "name": "Web",

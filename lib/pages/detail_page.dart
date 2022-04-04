@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/misc/colors.dart';
-import 'package:travel_app/widgets/app_large_text.dart';
+import 'package:travel_app/widgets/widgets.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -58,6 +58,59 @@ class _DetailPageState extends State<DetailPage> {
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          AppLargeText(
+                            text: 'Yosemite',
+                            color: Colors.black.withOpacity(0.8),
+                          ),
+                          const AppLargeText(
+                            text: '\$ 250',
+                            color: AppColors.mainColor,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.location_on,
+                            color: AppColors.mainColor,
+                          ),
+                          SizedBox(width: 5),
+                          AppText(
+                            text: 'USA, California',
+                            color: AppColors.textColor1,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Wrap(
+                            children: List.generate(
+                              5,
+                              (index) {
+                                return const Icon(
+                                  Icons.star,
+                                  color: AppColors.starColor,
+                                );
+                              },
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          const AppText(
+                            text: '(4.0)',
+                            color: AppColors.textColor2,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),

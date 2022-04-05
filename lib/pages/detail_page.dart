@@ -10,6 +10,9 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  int gottenStarts = 4;
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,15 +96,14 @@ class _DetailPageState extends State<DetailPage> {
                       Row(
                         children: [
                           Wrap(
-                            children: List.generate(
-                              5,
-                              (index) {
-                                return const Icon(
-                                  Icons.star,
-                                  color: AppColors.starColor,
-                                );
-                              },
-                            ),
+                            children: List.generate(5, (index) {
+                              return Icon(
+                                Icons.star,
+                                color: index < gottenStarts
+                                    ? AppColors.starColor
+                                    : AppColors.textColor2,
+                              );
+                            }),
                           ),
                           const SizedBox(width: 10),
                           const AppText(
@@ -109,6 +111,44 @@ class _DetailPageState extends State<DetailPage> {
                             color: AppColors.textColor2,
                           ),
                         ],
+                      ),
+                      const SizedBox(height: 25),
+                      AppLargeText(
+                        text: 'People',
+                        color: Colors.black.withOpacity(0.8),
+                      ),
+                      const SizedBox(height: 5),
+                      const AppText(
+                        text: 'Number of people in your group',
+                        color: AppColors.mainTextColor,
+                      ),
+                      const SizedBox(height: 10),
+                      Wrap(
+                        children: List.generate(5, (index) {
+                          return InkWell(
+                            onTap: () {
+                              setState(() {
+                                selectedIndex = index;
+                              });
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(right: 10),
+                              child: AppButtons(
+                                color: selectedIndex == index
+                                    ? Colors.white
+                                    : Colors.black,
+                                backgroundColor: selectedIndex == index
+                                    ? Colors.black
+                                    : AppColors.buttonBackground,
+                                size: 50,
+                                borderColor: selectedIndex == index
+                                    ? Colors.black
+                                    : AppColors.buttonBackground,
+                                text: (index + 1).toString(),
+                              ),
+                            ),
+                          );
+                        }),
                       ),
                     ],
                   ),

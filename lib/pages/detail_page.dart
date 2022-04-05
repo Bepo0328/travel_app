@@ -50,7 +50,7 @@ class _DetailPageState extends State<DetailPage> {
                 ),
               ),
               Positioned(
-                top: 330,
+                top: 280,
                 child: Container(
                   padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
                   width: MediaQuery.of(context).size.width,
@@ -92,7 +92,7 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
                           Wrap(
@@ -112,7 +112,7 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 25),
+                      const SizedBox(height: 20),
                       AppLargeText(
                         text: 'People',
                         color: Colors.black.withOpacity(0.8),
@@ -149,6 +149,17 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                           );
                         }),
+                      ),
+                      const SizedBox(height: 20),
+                      AppLargeText(
+                        text: 'Description',
+                        color: Colors.black.withOpacity(0.8),
+                      ),
+                      const SizedBox(height: 10),
+                      const AppText(
+                        text:
+                            'You must go for travel. Travelling helps get rid of pressure. Go to the mountains to see the nature.',
+                        color: AppColors.mainTextColor,
                       ),
                     ],
                   ),

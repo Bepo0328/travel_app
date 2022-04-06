@@ -16,13 +16,13 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
     return Scaffold(
       body: BlocBuilder<AppCubits, CubitStates>(
         builder: (context, state) {
-          if (state is WelcomeState) {
+          if (state is DetailState) {
+            return const DetailPage();
+          } else if (state is WelcomeState) {
             return const WelcomePage();
-          }
-          if (state is LoadedState) {
-            return const HomePage();
-          }
-          if (state is LoadingState) {
+          } else if (state is LoadedState) {
+            return const MainPage();
+          } else if (state is LoadingState) {
             return const Center(
               child: CircularProgressIndicator(),
             );
